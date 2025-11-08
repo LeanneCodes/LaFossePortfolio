@@ -73,6 +73,23 @@
     z-index: 1;
 }
 
+/* About */
+#about {
+    min-height: fit-content;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-text p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 /* Projects */
 #projects {
     min-height: 500px;
