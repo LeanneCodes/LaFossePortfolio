@@ -99,6 +99,14 @@
     line-height: 1.6;
 }
 
+.certifications {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 200px;
+}
+
 /* Projects */
 #projects {
     min-height: 500px;
