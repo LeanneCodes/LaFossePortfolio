@@ -8,6 +8,7 @@
     font-family: 'Poiret One', cursive;
 }
 
+/* Navbar */
 .nav-bar {
     position: relative;
     width: 100%;
@@ -33,6 +34,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.nav-links ul li a:hover {
+    font-weight: 600;
+}
+
+/* Hero Section */
 .intro-section {
     position: relative;
     min-height: 600px;
@@ -57,7 +63,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(9, 9, 9, 0.6); /* dark grey, semi-transparent */
+    background-color: rgba(9, 9, 9, 0.4); /* dark grey, semi-transparent */
     z-index: 0; /* behind the text */
 }
 
@@ -65,4 +71,59 @@
 .intro-section * {
     position: relative;
     z-index: 1;
+}
+
+/* Projects */
+#projects {
+    min-height: 500px;
+    background-color: #281117;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-item {
+    width: 300px;
+    text-align: center;
+}
+
+.project-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item h3 {
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-item p {
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.project-link {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-link:hover {
+    text-decoration: underline;
 }
