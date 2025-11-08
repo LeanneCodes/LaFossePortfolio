@@ -63,7 +63,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(9, 9, 9, 0.4); /* dark grey, semi-transparent */
+    background-color: rgba(9, 9, 9, 0.5); /* dark grey, semi-transparent */
     z-index: 0; /* behind the text */
 }
 
@@ -126,4 +126,40 @@
 
 .project-link:hover {
     text-decoration: underline;
+}
+
+/* Contact */
+form div > * {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.red-btn {
+    background-color: #281117;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Footer */
+footer {
+    background-color: #281117;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+footer p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin: 0;
 }
