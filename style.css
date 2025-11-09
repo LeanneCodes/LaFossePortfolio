@@ -94,17 +94,20 @@
 .about-text p {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    max-width: 800px;
+    max-width: 70%;
     margin: 0 auto;
     line-height: 1.6;
 }
 
 .certifications {
-    margin-top: 30px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
-    height: 200px;
+    flex-wrap: wrap;
+    height: fit-content;
+    max-width: 80%;
+    margin: 30px auto 0 auto;
 }
 
 .certifications img {
@@ -175,6 +178,14 @@
 }
 
 /* Contact */
+#contact {
+    min-height: 400px;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 50px 20px;
+    text-align: center;
+}
+
 form div > * {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
