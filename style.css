@@ -107,6 +107,18 @@
     height: 200px;
 }
 
+.certifications img {
+    height: 200px;
+}
+
+.edx-badge-link img {
+    scale: 1.1;
+}
+
+.code-institute-badge-link img {
+    scale: 0.9;
+}
+
 /* Projects */
 #projects {
     min-height: 500px;
