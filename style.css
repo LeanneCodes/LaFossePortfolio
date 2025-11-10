@@ -131,12 +131,32 @@
     text-align: center;
 }
 
-.project-list {
+/* .project-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     margin-top: 30px;
+} */
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: auto;
+    width: fit-content;
+}
+
+@media (max-width: 1024px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .project-list {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
 }
 
 .project-item {
@@ -175,6 +195,26 @@
 
 .project-link:hover {
     text-decoration: underline;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: #f4f4f4;
+    font-family: 'Poiret One', cursive;
+    border: none;
+    padding: 8px 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-btn.active {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: underline;
+}
+
+.filter-btn:hover {
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Contact */

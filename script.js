@@ -42,6 +42,28 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+// Project Filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('.project-item');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove 'active' class from all buttons
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const category = button.getAttribute('data-category');
+
+    projects.forEach(project => {
+      if (category === 'all' || project.getAttribute('data-category') === category) {
+        project.style.display = 'block';
+      } else {
+        project.style.display = 'none';
+      }
+    });
+  });
+});
+
 // Dynamically update footer year
 document.addEventListener("DOMContentLoaded", function() {
   const yearSpan = document.getElementById("current-year");
