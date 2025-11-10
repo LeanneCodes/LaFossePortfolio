@@ -8,6 +8,10 @@
     font-family: 'Poiret One', cursive;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Navbar */
 .nav-bar {
     /* position: relative; */
