@@ -66,13 +66,13 @@ html {
 /* Hero Section */
 .intro-section {
     position: relative;
-    min-height: 600px;
+    min-height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-image: url('assets/profile-picture.png');
+    background-image: url('assets/updated-pic.png');
     background-position: bottom;
     background-repeat: no-repeat;
     margin-top: -60px;
@@ -141,7 +141,7 @@ html {
 /* Projects */
 #projects {
     min-height: 500px;
-    background-color: #281117;
+    background-color: #3b1923;
     color: white;
     padding: 50px 20px;
     text-align: center;
@@ -157,7 +157,7 @@ html {
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin: auto;
     width: fit-content;
@@ -189,7 +189,7 @@ html {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project-item h3 {
+.project-item h5 {
     margin-top: 15px;
     font-family: 'Poppins', sans-serif;
 }
@@ -216,7 +216,7 @@ html {
 .filter-btn {
     background-color: transparent;
     color: #f4f4f4;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poppins', sans-serif;
     border: none;
     padding: 8px 5px;
     margin: 0 5px;
@@ -224,13 +224,8 @@ html {
     transition: background-color 0.3s ease;
 }
 
-.filter-btn.active {
-    font-family: 'Poppins', sans-serif;
+.filter-btn.active, .filter-btn:hover {
     text-decoration: underline;
-}
-
-.filter-btn:hover {
-    font-family: 'Poppins', sans-serif;
 }
 
 /* Contact */
@@ -248,7 +243,7 @@ form div > * {
 }
 
 .red-btn {
-    background-color: #281117;
+    background-color: #3b1923;
     color: white;
     font-family: 'Poppins', sans-serif;
     border: none;
@@ -259,7 +254,7 @@ form div > * {
 
 /* Footer */
 footer {
-    background-color: #281117;
+    background-color: #3b1923;
     color: white;
     text-align: center;
     padding: 15px 0;
