@@ -71,3 +71,13 @@ document.addEventListener("DOMContentLoaded", function() {
     yearSpan.textContent = new Date().getFullYear();
   }
 });
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.nav-bar');
+    if (window.scrollY > 60) { // when scrolling past 60px
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
