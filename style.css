@@ -374,6 +374,10 @@ footer .footer-name {
   background-color: var(--bg-light);
 }
 
+.wave-divider-1 {
+    margin-top: -40px;
+}
+
 /* Flip vertically and ensure full width */
 .wave-divider-2 svg {
   display: block;
