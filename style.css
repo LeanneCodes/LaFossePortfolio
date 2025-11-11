@@ -28,7 +28,7 @@ html {
 /* When scrolled */
 .nav-bar.scrolled {
   background: #FFFFFF;
-  background: linear-gradient(0deg,rgba(255, 255, 255, 0.5) 0%, rgba(244, 244, 244, 1) 100%);
+  background: linear-gradient(0deg,rgba(255, 255, 255, 0.5) 0%, rgba(229, 243, 253, 1) 100%);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -46,7 +46,7 @@ html {
 
 .nav-links ul li a {
     text-decoration: none;
-    color: white;
+    color: #FFF2EF;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
 }
@@ -59,7 +59,7 @@ html {
 .nav-links ul li a:hover,
 .nav-links ul li a:focus,
 .nav-links ul li a:active {
-  color: white;
+  color: #FFF2EF;
   outline: none;
   box-shadow: none;
 }
@@ -73,11 +73,11 @@ html {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-image: url('assets/updated-pic.png');
+    background-image: url('assets/updated-pic-bw.png');
     background-position: bottom;
     background-repeat: no-repeat;
     margin-top: -60px;
-    color: white;
+    color: #FFF2EF;
     overflow: hidden;
 }
 
@@ -89,7 +89,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(9, 9, 9, 0.5); /* dark grey, semi-transparent */
+    background-color: rgba(9, 9, 9, 0.4); /* dark grey, semi-transparent */
     z-index: 0; /* behind the text */
 }
 
@@ -142,8 +142,8 @@ html {
 /* Projects */
 #projects {
     min-height: 500px;
-    background-color: #3b1923;
-    color: white;
+    background-color: #1A2A4F;
+    color: #FFF2EF;
     padding: 60px 20px;
     text-align: center;
 }
@@ -193,30 +193,27 @@ html {
 .project-item h5 {
     margin-top: 15px;
     font-family: 'Poppins', sans-serif;
+    color: #FFF2EF;
 }
 
 .project-item p {
     margin-top: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    color: #ccc;
+    color: #FFF2EF;
 }
 
 .project-link {
     text-decoration: none;
-    color: white;
+    color: #FFF2EF;
     font-size: 14px;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
 }
 
-.project-link:hover {
-    text-decoration: underline;
-}
-
 .filter-btn {
     background-color: transparent;
-    color: #f4f4f4;
+    color: #FFF2EF;
     font-family: 'Poppins', sans-serif;
     border: none;
     padding: 8px 5px;
@@ -225,17 +222,42 @@ html {
     transition: background-color 0.3s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.project-link:hover, .filter-btn.active, .filter-btn:hover {
     text-decoration: underline;
+    color: #E5F3FD;
 }
+
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 6px 0 10px 0;
+}
+
+.tech-pill {
+    background-color: #FFDBB6;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+}
+
 
 /* Contact */
 #contact {
     min-height: 400px;
-    background-color: #f4f4f4;
+    background-color: #FFF2EF;
     color: #333;
     padding: 60px 20px;
     text-align: center;
+    background-image: url('assets/tech-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 form div > * {
@@ -243,19 +265,29 @@ form div > * {
     font-size: 14px;
 }
 
+.form-control {
+    font-size: 14px !important;
+}
+
 .red-btn {
-    background-color: #3b1923;
+    background-color: #1A2A4F;
     color: white;
     font-family: 'Poppins', sans-serif;
     border: none;
     border-radius: 5px;
     padding: 5px 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.red-btn:hover {
+    scale: 1.05;
+    cursor: pointer;
 }
 
 /* Footer */
 footer {
-    background-color: #3b1923;
+    background-color: #1A2A4F;
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -271,6 +303,11 @@ footer p {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     margin: 0;
+}
+
+footer .footer-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 /* Modal */
