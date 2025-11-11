@@ -1,326 +1,344 @@
+/* ----------------------------------------------------
+   FONT IMPORTS
+---------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* ----------------------------------------------------
+   ROOT VARIABLES
+---------------------------------------------------- */
+:root {
+  /* Colours */
+  --primary-colour: #1A2A4F;           /* Deep navy */
+  --secondary-colour: #FFF2EF;         /* Soft peach white */
+  --accent-light: rgba(229, 243, 253, 1); /* Pale blue tint */
+  --text-dark: #333;                   /* Standard text */
+  --bg-light: #f4f4f4;                 /* Section background */
+  --overlay-dark: rgba(9, 9, 9, 0.4);  /* Dark overlay for hero */
+  --white: #FFFFFF;
+
+  /* Fonts */
+  --font-main: 'Poppins', sans-serif;
+  --font-alt: 'Poiret One', cursive;
+
+  /* Shadows */
+  --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --btn-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* ----------------------------------------------------
+   GLOBAL STYLES
+---------------------------------------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poiret One', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-alt);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Navbar */
+/* ----------------------------------------------------
+   NAVBAR
+---------------------------------------------------- */
 .nav-bar {
-    /* position: relative; */
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    margin-top: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* When scrolled */
 .nav-bar.scrolled {
-  background: #FFFFFF;
-  background: linear-gradient(0deg,rgba(255, 255, 255, 0.5) 0%, rgba(229, 243, 253, 1) 100%);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, var(--accent-light) 100%);
+  box-shadow: var(--box-shadow-light);
 }
 
 .nav-bar.scrolled .nav-links ul li a {
-  color: #333;
+  color: var(--text-dark);
 }
 
 .nav-links ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0;
+  gap: 20px;
 }
 
 .nav-links ul li a {
-    text-decoration: none;
-    color: #FFF2EF;
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: var(--secondary-colour);
+  font-weight: 400;
+  font-family: var(--font-main);
+  transition: font-weight 0.2s ease;
 }
 
-.nav-links ul li a:hover {
-    font-weight: 600;
-}
-
-/* Keeps link white when active, hovered, or focused */
 .nav-links ul li a:hover,
 .nav-links ul li a:focus,
 .nav-links ul li a:active {
-  color: #FFF2EF;
+  font-weight: 600;
+  color: var(--secondary-colour);
   outline: none;
   box-shadow: none;
 }
 
-/* Hero Section */
+/* ----------------------------------------------------
+   HERO SECTION
+---------------------------------------------------- */
 .intro-section {
-    position: relative;
-    min-height: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    background-image: url('assets/updated-pic-bw.png');
-    background-position: bottom;
-    background-repeat: no-repeat;
-    margin-top: -60px;
-    color: #FFF2EF;
-    overflow: hidden;
+  position: relative;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: url('assets/updated-pic-bw.png') bottom no-repeat;
+  margin-top: -60px;
+  color: var(--secondary-colour);
+  overflow: hidden;
 }
 
-/* Dark grey overlay */
 .intro-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(9, 9, 9, 0.4); /* dark grey, semi-transparent */
-    z-index: 0; /* behind the text */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--overlay-dark);
+  z-index: 0;
 }
 
-/* Keeps text above the overlay */
 .intro-section * {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
-/* About */
+/* ----------------------------------------------------
+   ABOUT SECTION
+---------------------------------------------------- */
 #about {
-    min-height: fit-content;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 60px 20px;
-    text-align: center;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .about-text p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    max-width: 60%;
-    margin: 0 auto;
-    line-height: 1.6;
+  font-family: var(--font-main);
+  font-size: 14px;
+  max-width: 60%;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .certifications {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    height: fit-content;
-    max-width: 80%;
-    margin: 30px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 80%;
+  margin: 30px auto 0;
 }
 
 .certifications img {
-    height: 200px;
+  height: 200px;
 }
 
 .edx-badge-link img {
-    scale: 1.1;
+  scale: 1.1;
 }
 
 .code-institute-badge-link img {
-    scale: 0.9;
+  scale: 0.9;
 }
 
-/* Projects */
+/* ----------------------------------------------------
+   PROJECTS SECTION
+---------------------------------------------------- */
 #projects {
-    min-height: 500px;
-    background-color: #1A2A4F;
-    color: #FFF2EF;
-    padding: 60px 20px;
-    text-align: center;
+  background-color: var(--primary-colour);
+  color: var(--secondary-colour);
+  padding: 60px 20px;
+  text-align: center;
 }
-
-/* .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-} */
 
 .project-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin: auto;
-    width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: auto;
+  width: fit-content;
 }
 
 @media (max-width: 1024px) {
   .project-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .project-list {
-    grid-template-columns: 1fr; /* 1 per row on mobile */
+    grid-template-columns: 1fr;
   }
 }
 
 .project-item {
-    width: 300px;
-    text-align: center;
+  width: 300px;
+  text-align: center;
 }
 
 .project-item img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-medium);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item h5,
+.project-item p {
+  font-family: var(--font-main);
+  color: var(--secondary-colour);
 }
 
 .project-item h5 {
-    margin-top: 15px;
-    font-family: 'Poppins', sans-serif;
-    color: #FFF2EF;
+  margin-top: 15px;
 }
 
 .project-item p {
-    margin-top: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: #FFF2EF;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .project-link {
-    text-decoration: none;
-    color: #FFF2EF;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: var(--secondary-colour);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-main);
 }
 
 .filter-btn {
-    background-color: transparent;
-    color: #FFF2EF;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    padding: 8px 5px;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background: transparent;
+  color: var(--secondary-colour);
+  font-family: var(--font-main);
+  border: none;
+  padding: 8px 5px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: text-decoration 0.3s ease;
 }
 
-.project-link:hover, .filter-btn.active, .filter-btn:hover {
-    text-decoration: underline;
+.project-link:hover,
+.filter-btn.active,
+.filter-btn:hover {
+  text-decoration: underline;
 }
 
 .tech-stack {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 6px 0 10px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 6px 0 10px;
 }
 
 .tech-pill {
-    background-color: #FFDBB6;
-    color: #000;
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 4px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    text-transform: capitalize;
-    font-family: 'Poppins', sans-serif;
+  background-color: var(--accent-light);
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  font-family: var(--font-main);
 }
 
-
-/* Contact */
+/* ----------------------------------------------------
+   CONTACT SECTION
+---------------------------------------------------- */
 #contact {
-    min-height: 400px;
-    background-color: #FFF2EF;
-    color: #333;
-    padding: 60px 20px;
-    text-align: center;
-    background-image: url('assets/tech-bg.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: var(--secondary-colour);
+  color: var(--text-dark);
+  padding: 60px 20px;
+  text-align: center;
+  background: url('assets/tech-bg.png') center/cover no-repeat;
 }
 
 form div > * {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+  font-family: var(--font-main);
+  font-size: 14px;
 }
 
 .form-control {
-    font-size: 14px !important;
+  font-size: 14px !important;
 }
 
 .red-btn {
-    background-color: #1A2A4F;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 20px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  background-color: var(--primary-colour);
+  color: var(--white);
+  font-family: var(--font-main);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  box-shadow: var(--btn-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .red-btn:hover {
-    scale: 1.05;
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
-/* Footer */
+/* ----------------------------------------------------
+   FOOTER
+---------------------------------------------------- */
 footer {
-    background-color: #1A2A4F;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 60px;
+  background-color: var(--primary-colour);
+  color: var(--white);
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: centre;
+  width: 100%;
+  height: 60px;
 }
 
-footer p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    margin: 0;
-}
-
+footer p,
 footer .footer-name {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+  font-family: var(--font-main);
+  margin: 0;
+  font-weight: 600;
 }
 
-/* Modal */
+/* ----------------------------------------------------
+   MODAL
+---------------------------------------------------- */
 .modal-content {
   border-radius: 12px;
   overflow: hidden;
 }
+
 .modal-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-main);
   font-weight: 600;
 }
+
 .modal-body {
   padding: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-main);
   font-size: 14px;
 }
