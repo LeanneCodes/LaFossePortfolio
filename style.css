@@ -224,12 +224,12 @@ html {
 
 .project-link:hover, .filter-btn.active, .filter-btn:hover {
     text-decoration: underline;
-    color: #E5F3FD;
 }
 
 .tech-stack {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 6px;
     margin: 6px 0 10px 0;
 }
