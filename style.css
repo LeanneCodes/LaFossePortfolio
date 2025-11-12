@@ -216,6 +216,37 @@ html {
   scale: 0.9;
 }
 
+.badge-container {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.badge-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+    position: absolute;
+    /* top: 100%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: rgba(0, 0, 0, 0.3); */
+    color: var(--primary-colour);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 143px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+
 /* ----------------------------------------------------
    PROJECTS SECTION
 ---------------------------------------------------- */
