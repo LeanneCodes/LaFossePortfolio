@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     emailjs.sendForm(serviceID, templateID, this)
       .then(() => {
-        showMessage("Message sent successfully!", "green");
+        showMessage("Message sent successfully!", "white");
         this.reset();
       })
       .catch((error) => {
