@@ -41,6 +41,11 @@ html {
   scroll-behavior: smooth;
 }
 
+
+body {
+  overflow-x: hidden;
+}
+
 /* ----------------------------------------------------
    NAVBAR
 ---------------------------------------------------- */
@@ -48,7 +53,7 @@ html {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +133,17 @@ html {
   color: #1A2A4F;
 }
 
+@media (max-width: 768px) {
+  .nav-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0 20px;
+    padding: 10px;
+  }
+}
+
+
 /* ----------------------------------------------------
    HERO SECTION
 ---------------------------------------------------- */
@@ -189,9 +205,21 @@ html {
 .about-text p {
   font-family: var(--font-main);
   font-size: 14px;
-  max-width: 60%;
+  width: 60%;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .about-text p {
+    width: 90%;
+}
+}
+
+@media (max-width: 425px) {
+  #about {
+    padding: 100px 20px;
+  }
 }
 
 .certifications {
@@ -261,26 +289,16 @@ html {
     font-family: var(--font-main);
     font-size: 14px;
     max-width: 800px;
-    width: 80%;
+    width: 90%;
     margin: 10px auto 0;
     line-height: 1.6;
 }
 
-.project-item {
-    box-shadow: var(--box-shadow-medium);
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    padding: 0 0 10px 0;
-}
-
-.project-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
 .project-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
   margin: auto;
   width: fit-content;
@@ -300,23 +318,6 @@ html {
 
 .project-details h5 {
     padding: 0 10px;
-}
-
-@media (max-width: 1024px) {
-  .project-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .project-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-.project-item {
-  width: 350px;
-  text-align: center;
 }
 
 .project-item img {
@@ -341,6 +342,20 @@ html {
 .project-item p {
   margin-top: 10px;
   font-size: 14px;
+}
+
+.project-item {
+  box-shadow: var(--box-shadow-medium);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 0 0 10px 0;
+  max-width: 350px;
+  text-align: center;
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .project-link {
@@ -385,6 +400,27 @@ html {
   border-radius: 20px;
   text-transform: capitalize;
   font-family: var(--font-main);
+}
+
+@media (max-width: 320px) {
+  .project-item {
+    width: 270px;
+  }
+
+  .project-item img {
+    width: 270px;
+    height: 270px;
+  }
+
+  .project-details {
+    height: auto;
+  }
+}
+
+@media (max-width: 425px) {
+  #projects {
+    padding: 100px 20px;
+  }
 }
 
 /* ----------------------------------------------------
@@ -529,4 +565,10 @@ footer .footer-name {
   fill: #1A2A4F; /* dark blue to blend with projects */
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 720px) {
+  .wave-divider-1 svg, .wave-divider-2 svg {
+    width: 200%;
+  }
 }
